@@ -7,22 +7,13 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-class New(models.Model):
+
+class Mryp(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    article = models.TextField()
     pk_id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=255, blank=True, null=True)
-    author = models.CharField(max_length=255, blank=True, null=True)
-    article = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'new'
-
-
-class Pics(models.Model):
-    pic_url = models.AutoField(primary_key=True)
-    pic_bin = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'pics'
-
+        db_table = 'mryp'

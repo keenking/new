@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6ok9h)!ylw(mfn34g5fea^gh!_)r_q7(hqd95=2_5q@z(oedj$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.17mtd.com']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nice',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
@@ -78,10 +79,11 @@ WSGI_APPLICATION = 'new.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "mryp_local",
+        'NAME': "mryp_cloud",
         'USER': "root",
-        'PASSWORD': "root123",
+        'PASSWORD': "***",
         'HOST': "127.0.0.1",
+        'PORT': 3306,
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
 }

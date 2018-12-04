@@ -16,10 +16,9 @@ import pymysql
 #    ) AS tmp USING (pk_id)
 # WHERE tmp.pk_id IS NULL;
 
-
 def get_all():
     url = 'http://read.poxiaobbs.com'
-    r = requests.post(url)
+    r = requests.post(url,  verify=False)
     reg_title = '"posttitlei">(.*)</h2>'
     title = re.findall(reg_title, r.text)[0]
     reg_author = '<div class="postInfo">Author(.*)</div>'
@@ -31,7 +30,7 @@ def get_all():
 if __name__ == '__main__':
     connection = pymysql.connect(host='193.112.64.245',
                              user='root',
-                             password='woaiXLT:1314',
+                             password='woai1314!@~^',
                              db='mryp_cloud',
                              charset='utf8')
     connection.autocommit(1)

@@ -7,7 +7,7 @@ import random
 
 def new(request):
 
-    data = models.New.objects.order_by('?')[0]
+    data = models.Mryp.objects.order_by('?')[0]
 
     pic = str(random.randint(1, 400))+'.png'
     title = data.title
